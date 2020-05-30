@@ -5,16 +5,15 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 st.markdown(
-	r'''**
-	enter a chemical formula below. it should have the following format **''')
-st.code(" 'symbol number, ..., symbol number, center' ")
-st.markdown(" ** make sure to seperate each element with a comma, and don't forget to tell us the central atom as the final symbol. for example, $CH_4$ should be entered as **") 
-st.code(" 'C1,H4,C' ")
+    r'''**
+    enter a chemical formula below. it should have the following format (no quotes 😊)**''')
+st.code(" 'charge,symbol number, ..., symbol number, center' ")
+st.markdown(" ** make sure to seperate each element with a comma, and don't forget to tell us the charge first (even if its 0) and the central atom as the final symbol. for example, $CH_4$ should be entered as **") 
+st.code(" '0,C1,H4,C' ")
 input_formula = st.text_input('formula', value='', max_chars=None, key=None, type='default')
-st.markdown('_**happy dipoling**_ 🧪🧪🧪')
-st.latex(input_formula)
+st.markdown("_** LP means lone pair. if you don't see a blue vector, that means its on top of a bond. happy dipoling**_")
 
-path = '/Users/zoeshleifer/final_chem/periodic_table.csv'
+path = '/Users/zoeshleifer/Census-Data-Streamlit-App/periodic_table.csv'
 ptable = pd.read_csv(path)
 ptable.set_index('Symbol')
 
