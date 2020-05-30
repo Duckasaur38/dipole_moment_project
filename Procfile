@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run dm_final.py
+web: sh setup.sh && streamlit run app.py
